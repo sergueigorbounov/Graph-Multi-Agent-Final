@@ -66,18 +66,6 @@ Le choix de **NestJS** comme framework backend était stratégique pour ses avan
 - **Cart Manager** : Gestion des produits via des services utilisant des fichiers JSON comme base de données temporaire.
 - **Agent Supervisor** : Orchestration des tâches entre les agents.
 
-Exemple d'un agent en TypeScript dans un module NestJS :
-```typescript
-@Injectable()
-export class TavilyAgent {
-  constructor(private readonly httpService: HttpService) {}
-
-  async searchProduct(query: string): Promise<any> {
-    const response = await this.httpService.get(`https://api.tavily.com/search`, { params: { query } }).toPromise();
-    return response.data;
-  }
-}
-```
 
 ### **3. Construction du Graphe**
 - Un graphe d'exécution des agents est défini via **LangGraph**, reliant les différents agents en fonction de leurs responsabilités.

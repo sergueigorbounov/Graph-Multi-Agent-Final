@@ -49,7 +49,7 @@ Accédez à l'application déployée ici :
 
 4. **Améliorations Graphiques :**  
    - Ajout d'une interface visuelle interactive pour afficher les logs des actions.
-   - Intégration d'un Easter egg musical avec un lecteur Spotify intégré.  
+   - Intégration d'un Easter egg et lecteur Spotify.  
 
 5. **Utilisation de LangSmith Studio :**  
    - Configuration de **LangSmith Studio** pour observer les communications entre agents et optimiser les flux.  

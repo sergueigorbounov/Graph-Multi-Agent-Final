@@ -155,17 +155,6 @@ Avant de lancer le projet, assurez-vous d'avoir installé les outils suivants :
 - Ajout d'une interface utilisateur pour simplifier les interactions avec l'API.
 - Gestion avancée des erreurs pour des cas spécifiques.
 
----
-
-#### **Licence**
-Ce projet est sous licence MIT. Vous êtes libre de l'utiliser, de le modifier et de le distribuer.
-
----
-
-#### **Contact**
-En cas de questions ou de problèmes, n'hésitez pas à me contacter :  
-**Email :** [votre.email@example.com]  
-**GitHub :** [https://github.com/votre-profil](https://github.com/votre-profil)
 
 
 

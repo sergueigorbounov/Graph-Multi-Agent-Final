@@ -1,165 +1,175 @@
 https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project setup
-
-```bash
-$ npm install
-```
-
-## Compile and run the project
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
-# Fullstack Test - Shopping Cart Backend
-
-## Description
-A backend application to manage a shopping cart and provide product recommendations using NestJS and OpenAI.
-
-### Features:
-1. Manage a shopping cart (add, remove, list products).
-2. Search online using OpenAI for product suggestions.
-3. Coordinate multiple agents via a single API endpoint.
+### README - **Test Technique Développeur Fullstack**
 
 ---
 
-## Installation
+#### **Description du Projet**
+Ce projet est une application backend construite avec **NestJS** et utilisant la librairie **Langgraph** pour orchestrer la collaboration entre différents agents. L'objectif est de gérer un panier d'achat avec des fonctionnalités enrichies par des recherches en ligne.
 
-1. Clone the repository:
+L'application expose un **endpoint unique** pour permettre à l'utilisateur d'interagir avec trois agents interconnectés :
+
+1. **Agent de Gestion de Panier** :
+   - Ajoute, supprime et affiche les produits dans le panier.
+   - Les données sont stockées dans un fichier JSON pour simplifier le stockage.
+
+2. **Agent Tavily** :
+   - Effectue des recherches en ligne pour trouver des produits ou informations pertinentes selon les besoins exprimés par l'utilisateur.
+
+3. **Agent Coordinateur** :
+   - Ordonne les appels entre les agents, collecte leurs réponses et synthétise une réponse finale destinée à l'utilisateur.
+
+---
+
+#### **Fonctionnalités Principales**
+- Ajouter un produit au panier.
+- Supprimer un produit du panier.
+- Afficher les produits présents dans le panier.
+- Rechercher des produits via l'agent Tavily.
+- Générer une réponse structurée et conviviale pour l'utilisateur à travers un seul endpoint.
+
+---
+
+#### **Pré-requis**
+Avant de lancer le projet, assurez-vous d'avoir installé les outils suivants :
+- **Node.js** (v18 ou supérieur)
+- **npm** (v9 ou supérieur)
+- **NestJS CLI** (si besoin pour des modifications)
+- Une clé API valide pour **OpenAI** (utilisée par Langgraph).
+
+---
+
+#### **Installation**
+
+1. **Cloner le dépôt :**
    ```bash
-   git clone https://github.com/your-repo-url.git
-   cd your-repo-name
+   git clone <lien_du_dépôt>
+   cd <nom_du_dossier>
+   ```
 
-# NestJS Fullstack App
-
-## Setup
-1. Clone the repository.
-2. Install dependencies:
+2. **Installer les dépendances :**
    ```bash
    npm install
+   ```
 
-# LangGraph NestJS Application
+3. **Configurer les variables d'environnement :**
+   - Créez un fichier `.env` à la racine du projet.
+   - Ajoutez les informations suivantes :
+     ```env
+     OPENAI_API_KEY=your_openai_api_key
+     ```
 
-## Description
-Backend application for a shopping cart system with LangGraph multi-agent architecture.
-
-## Installation
-1. Clone the repository.
-2. Install dependencies:
+4. **Lancer l'application :**
    ```bash
-   npm install
+   npm run start
+   ```
 
-# Fullstack Test - Shopping Cart Application
+   Par défaut, l'application sera accessible sur `http://localhost:3000`.
 
-## Project Overview
+---
 
-This application allows users to manage a shopping cart through natural language queries. It utilizes three agents:
+#### **Utilisation**
 
-1. **Coordinator Agent**: Orchestrates the actions between other agents based on user queries.
-2. **Cart Agent**: Manages cart operations like adding, removing, and listing products.
-3. **Tavily Agent**: Simulates web searches to find product information.
+##### **1. Endpoint unique**
+- **Route :**
+  ```
+  GET /invoke?query={user_query}
+  ```
+- **Exemples :**
 
-## Technologies Used
+  **Ajouter un produit au panier :**
+  ```bash
+  curl "http://localhost:3000/invoke?query=Ajoute un sapin de Noël à mon panier"
+  ```
 
-- **NestJS**: A progressive Node.js framework for building efficient server-side applications.
-- **Langgraph**: Facilitates multi-agent collaboration and communication.
-- **Langchain**: Provides tools for building language model applications.
-- **TypeScript**: For type safety and better code maintainability.
+  **Rechercher et ajouter un produit :**
+  ```bash
+  curl "http://localhost:3000/invoke?query=Recherche un sapin de Noël chez Ikea et ajoute-le au panier"
+  ```
 
-## Installation Instructions
+  **Afficher le contenu du panier :**
+  ```bash
+  curl "http://localhost:3000/invoke?query=Affiche mon panier"
+  ```
 
-1. **Clone the Repository**
+---
 
-   ```bash
-   git clone <repository-url>
-=======
-# Graph-Multi-Agents
-Graph multi-agent LangGraph
->>>>>>> origin/main
+#### **Structure du Projet**
+- **`src/`**
+  - **`app.controller.ts`** : Point d'entrée principal pour gérer les requêtes utilisateur via `/invoke`.
+  - **`app.service.ts`** : Logique de traitement des requêtes utilisateur.
+  - **`agents/`**
+    - **`cart-manager.agent.ts`** : Gère les actions liées au panier (ajout, suppression, affichage).
+    - **`tavily.agent.ts`** : Réalise des recherches en ligne pour enrichir les produits du panier.
+    - **`coordinator.agent.ts`** : Coordonne les appels entre agents et retourne une réponse à l'utilisateur.
+  - **`storage/cart.json`** : Stockage des données du panier (produits ajoutés).
+
+---
+
+#### **Approche de Développement**
+1. **Analyse des exigences :**
+   - Identifier les responsabilités de chaque agent.
+   - Structurer l'application pour permettre la collaboration entre les agents via Langgraph.
+
+2. **Mise en place des agents :**
+   - Création de l'agent de gestion de panier (Cart Manager).
+   - Implémentation de l'agent Tavily pour les recherches.
+   - Développement de l'agent Coordinateur pour orchestrer les actions.
+
+3. **Orchestration via Langgraph :**
+   - Utilisation de Langgraph pour structurer le workflow entre les agents.
+   - Configuration de la limite de récursion et gestion des résumés d'actions.
+
+4. **Endpoint unique :**
+   - Implémentation d'une route unique (`/invoke`) pour traiter toutes les requêtes utilisateur.
+
+5. **Test et Validation :**
+   - Validation des cas d'utilisation tels que l'ajout, la suppression et l'affichage des produits.
+   - Vérification de l'interaction entre agents et du flux des données.
+
+---
+
+#### **Exemples de Scénarios Testés**
+
+1. **Ajout de produit :**
+   - Requête : `Ajoute un sapin de Noël à mon panier`
+   - Réponse : `Le produit "Sapin de Noël" a été ajouté au panier.`
+
+2. **Affichage du panier :**
+   - Requête : `Affiche mon panier`
+   - Réponse :
+     ```
+     Votre panier contient :
+     - Sapin de Noël - [Lien](https://www.ikea.com)
+     ```
+
+3. **Recherche et ajout :**
+   - Requête : `Recherche un sapin chez Ikea et ajoute-le au panier.`
+   - Réponse : `Le produit "Sapin IKEA" a été trouvé et ajouté à votre panier.`
+
+---
+
+#### **Améliorations Possibles**
+- Intégration de tests unitaires pour valider les fonctionnalités critiques.
+- Support d'un stockage plus robuste (par exemple, une base de données relationnelle comme PostgreSQL).
+- Ajout d'une interface utilisateur pour simplifier les interactions avec l'API.
+- Gestion avancée des erreurs pour des cas spécifiques.
+
+---
+
+#### **Licence**
+Ce projet est sous licence MIT. Vous êtes libre de l'utiliser, de le modifier et de le distribuer.
+
+---
+
+#### **Contact**
+En cas de questions ou de problèmes, n'hésitez pas à me contacter :  
+**Email :** [votre.email@example.com]  
+**GitHub :** [https://github.com/votre-profil](https://github.com/votre-profil)
+
+
+
+
+
+
+

@@ -80,7 +80,7 @@ Le choix de **NestJS** comme framework backend était stratégique pour ses avan
   ```
 
 ### **4. Orchestration des Flux avec LangSmith**
-- Les interactions entre les agents sont supervisées et ajustées via LangSmith Studio.
+- Les interactions entre les agents sont supervisées et ajustées via LangSmith.
 
 ---
 

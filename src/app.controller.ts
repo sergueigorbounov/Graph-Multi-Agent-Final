@@ -12,7 +12,8 @@ export class AppController {
     }
 
     try {
-      return await this.appService.handleQuery(query);
+      const result = await this.appService.handleQuery(query);
+      return `Response: ${result.response}. Reasoning: ${result.reasoning}`;
     } catch (error) {
       console.error("Error in /invoke route:", error);
       throw new InternalServerErrorException("An error occurred while processing your request.");

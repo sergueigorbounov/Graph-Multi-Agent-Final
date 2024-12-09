@@ -7,6 +7,7 @@ import { llm } from "./supervisor.agent.js";
 import { AgentState } from "../state/agent.state.js";
 import { HumanMessage } from "@langchain/core/messages";
 import { z } from 'zod';
+import { END } from "@langchain/langgraph";
 const CART_FILE = "cart.json";
 
 const cartManagerTool = new DynamicStructuredTool({
@@ -50,11 +51,19 @@ export const cartManagerNode = async (
   state: typeof AgentState.State,
   config?: RunnableConfig,
 ) => {
+  if (state.messages.some((msg) => (msg.content as string).includes("Unable to retrieve")))
+  {
+    return {
+      messages: [
+        new HumanMessage({
+          content: "Could not add anything to the cart as the required details are unavailable.",
+          name: "CartManager",
+        }),
+      ],
+      next: END,
+    };
+  }
+
   const result = await cartManagerAgent.invoke(state, config);
-  const lastMessage = result.messages[result.messages.length - 1];
-  return {
-    messages: [
-      new HumanMessage({ content: lastMessage.content, name: "CartManager" }),
-    ],
-  };
+  return result;
 };

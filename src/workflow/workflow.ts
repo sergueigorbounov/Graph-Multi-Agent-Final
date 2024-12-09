@@ -10,7 +10,19 @@ const workflow = new StateGraph(AgentState)
   // 2. Add the nodes; these will do the work
   .addNode("researcher", tavilyNode)
   .addNode("cart_manager", cartManagerNode)
-  .addNode("supervisor", supervisorChain);
+  .addNode("supervisor", async (state, config) => {
+    console.log("Supervisor executing with state:", state);
+
+    const result = await supervisorChain.invoke(state, config);
+    console.log("Supervisor result:", result);
+
+    // Log detailed reasoning
+    if (result.reasoning) {
+      console.log("Reasoning:", result.reasoning);
+    }
+
+    return result;
+  });
 // 3. Define the edges. We will define both regular and conditional ones
 // After a worker completes, report to supervisor
 members.forEach((member) => {

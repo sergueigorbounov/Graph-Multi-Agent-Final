@@ -12,21 +12,7 @@ Accédez à l'application déployée ici :
 [**Graph Multi-Agent - Déploiement Vercel**](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app)
 
 ---
-src/ :
 
-agents/ : Agents principaux.
-cartManager.agent.ts : Gère les actions liées au panier.
-tavily.agent.ts : Recherche des produits en ligne.
-supervisor.agent.ts : Orchestration entre agents.
-tools/ : Outils utilisés par les agents.
-cartManagerTool.ts : Actions sur le panier.
-state/ :
-agent.state.ts : Gestion centralisée des états.
-workflow/ :
-workflow.ts : Construction des graphes et workflows.
-Données :
-
-cart.json : Fichier JSON pour le stockage des produits.
 ### **Agents Implémentés**
 
 1. **Agent de Gestion de Panier :**  

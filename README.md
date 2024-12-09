@@ -200,5 +200,5 @@ Votre panier contient :
 ---
 
 🎄 **Joyeux Noël et Bonne Année !**  
-Créé avec passion par **Sergueï Gorbounov**.  
+**Sergueï Gorbounov**.  
 [**Lien GitHub**](https://github.com/sergueigorbounov/Graph-Multi-Agent-Final) | [**Lien Déployé sur Vercel**](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app) 🎅

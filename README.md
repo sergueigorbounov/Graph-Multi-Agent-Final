@@ -1,164 +1,133 @@
-https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app
-
-### README - **Test Technique Développeur Fullstack**
+# Test Technique Développeur Fullstack - README Étendu
 
 ---
 
-#### **Description du Projet**
-Ce projet est une application backend construite avec **NestJS** et utilisant la librairie **Langgraph** pour orchestrer la collaboration entre différents agents. L'objectif est de gérer un panier d'achat avec des fonctionnalités enrichies par des recherches en ligne.
+### **Résumé du Projet**
 
-L'application expose un **endpoint unique** pour permettre à l'utilisateur d'interagir avec trois agents interconnectés :
+Ce projet illustre la conception d'une application backend avec **NestJS** et la librairie innovante **LangGraph**. Il s'agit de créer une architecture multi-agent orchestrée autour d'une gestion de panier d'achat enrichie par des recherches intelligentes en ligne.  
 
-1. **Agent de Gestion de Panier** :
-   - Ajoute, supprime et affiche les produits dans le panier.
-   - Les données sont stockées dans un fichier JSON pour simplifier le stockage.
+L'objectif est de mettre en avant des compétences techniques solides tout en proposant une expérience utilisateur immersive et conviviale, agrémentée d'une interface graphique dynamique et d'un Easter egg musical pour rendre l'exploration plus agréable.  
 
-2. **Agent Tavily** :
-   - Effectue des recherches en ligne pour trouver des produits ou informations pertinentes selon les besoins exprimés par l'utilisateur.
-
-3. **Agent Coordinateur** :
-   - Ordonne les appels entre les agents, collecte leurs réponses et synthétise une réponse finale destinée à l'utilisateur.
+Accédez à l'application déployée ici :  
+[**Graph Multi-Agent - Déploiement Vercel**](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app)
 
 ---
 
-#### **Fonctionnalités Principales**
-- Ajouter un produit au panier.
-- Supprimer un produit du panier.
-- Afficher les produits présents dans le panier.
-- Rechercher des produits via l'agent Tavily.
-- Générer une réponse structurée et conviviale pour l'utilisateur à travers un seul endpoint.
+### **Agents Implémentés**
+
+1. **Agent de Gestion de Panier :**  
+   - Permet l'ajout, la suppression et l'affichage des produits.  
+   - Les données sont stockées dans un fichier JSON pour simplifier la gestion.  
+
+2. **Agent Tavily :**  
+   - Effectue des recherches sur Internet (utilisant l'API Tavily).  
+   - Sert à enrichir le panier avec des recommandations ou informations pertinentes.  
+
+3. **Agent Coordinateur :**  
+   - Orchestrateur principal des actions entre les agents.  
+   - Synthétise les réponses des agents pour générer une réponse finale conviviale.  
 
 ---
 
-#### **Pré-requis**
-Avant de lancer le projet, assurez-vous d'avoir installé les outils suivants :
-- **Node.js** (v18 ou supérieur)
-- **npm** (v9 ou supérieur)
-- **NestJS CLI** (si besoin pour des modifications)
-- Une clé API valide pour **OpenAI** (utilisée par Langgraph).
+### **Objectif Technique et Stratégie**
+
+#### **Approche Adoptée :**
+- J'ai utilisé la documentation officielle de **LangGraph** et l'API **LangSmith** pour orchestrer les agents et visualiser leurs interactions.
+- J'ai expérimenté avec des modèles de coordination avancés, notamment en utilisant un **Agent Supervisor**, qui délègue intelligemment les tâches aux différents agents en fonction des besoins exprimés par l'utilisateur.
+
+#### **Étapes Clés :**
+1. **Définir l'État :**  
+   - Création d'une structure d'état partagé pour gérer les messages entre les agents et enregistrer les actions effectuées.
+
+2. **Création des Outils :**  
+   - Agent Tavily pour les recherches.  
+   - Outil de gestion de panier pour gérer les produits.
+
+3. **Orchestration Supervisée :**  
+   - Implémentation d'un **Agent Supervisor** pour router les tâches.  
+   - Gestion des messages avec des résumés utilisateurs.
+
+4. **Améliorations Graphiques :**  
+   - Ajout d'une interface visuelle interactive pour afficher les logs des actions.
+   - Intégration d'un Easter egg musical avec un lecteur Spotify intégré.  
+
+5. **Utilisation de LangSmith Studio :**  
+   - Configuration de **LangSmith Studio** pour observer les communications entre agents et optimiser les flux.  
 
 ---
 
-#### **Installation**
+### **Fonctionnalités Techniques**
 
-1. **Cloner le dépôt :**
-   ```bash
-   git clone <lien_du_dépôt>
-   cd <nom_du_dossier>
+1. **Endpoint Unique :**  
+   - **Route API :** `/invoke?query={user_query}`  
+   - L'utilisateur formule ses requêtes sous forme de texte libre (exemple : *"Recherche un sapin chez Ikea et ajoute-le au panier."*).
+
+2. **Agents Collaboratifs :**  
+   - Collaboration dynamique entre les agents grâce à **LangGraph**.
+   - Résultats contextualisés pour chaque action.
+
+3. **Visualisation des Logs :**  
+   - Interface HTML interactive affichant les logs en temps réel.  
+   - Animation graphique et effets visuels pour enrichir l'expérience.
+
+4. **Déploiement et Accessibilité :**  
+   - Application déployée sur **Vercel** :  
+     [https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app)
+
+---
+
+### **Requêtes Exemples**
+
+1. **Ajout d'un Produit au Panier :**
+   ```
+   GET /invoke?query=Ajoute un sapin de Noël à mon panier
    ```
 
-2. **Installer les dépendances :**
-   ```bash
-   npm install
+   **Réponse :**  
+   ```
+   Le produit "Sapin de Noël" a été ajouté au panier.
    ```
 
-3. **Configurer les variables d'environnement :**
-   - Créez un fichier `.env` à la racine du projet.
-   - Ajoutez les informations suivantes :
-     ```env
-     OPENAI_API_KEY=your_openai_api_key
-     ```
-
-4. **Lancer l'application :**
-   ```bash
-   npm run start
+2. **Rechercher un Produit et l'Ajouter :**
+   ```
+   GET /invoke?query=Recherche un sapin de Noël chez Ikea et ajoute-le au panier
    ```
 
-   Par défaut, l'application sera accessible sur `http://localhost:3000`.
+   **Réponse :**  
+   ```
+   Le produit "Sapin IKEA" a été trouvé et ajouté à votre panier.
+   ```
+
+3. **Afficher le Panier :**
+   ```
+   GET /invoke?query=Affiche mon panier
+   ```
+
+   **Réponse :**  
+   ```
+   Votre panier contient :
+   - Sapin de Noël - [Lien IKEA](https://www.ikea.com)
+   ```
 
 ---
 
-#### **Utilisation**
+### **Expérience et Ambition**
 
-##### **1. Endpoint unique**
-- **Route :**
-  ```
-  GET /invoke?query={user_query}
-  ```
-- **Exemples :**
+Ce projet m'a permis de découvrir la puissance de **LangGraph Studio**, un outil extraordinaire pour modéliser et orchestrer des systèmes multi-agents. J'ai exploré des fonctionnalités avancées comme la visualisation des communications via LangSmith, qui se révèle être un atout majeur pour le débogage et l'optimisation.
 
-  **Ajouter un produit au panier :**
-  ```bash
-  curl "http://localhost:3000/invoke?query=Ajoute un sapin de Noël à mon panier"
-  ```
+### **Pour Impressionner l'Équipe Edtake**
 
-  **Rechercher et ajouter un produit :**
-  ```bash
-  curl "http://localhost:3000/invoke?query=Recherche un sapin de Noël chez Ikea et ajoute-le au panier"
-  ```
+1. **Innovation et Originalité :**  
+   - Ajout d'éléments visuels et interactifs pour rendre l'expérience utilisateur mémorable.  
 
-  **Afficher le contenu du panier :**
-  ```bash
-  curl "http://localhost:3000/invoke?query=Affiche mon panier"
-  ```
+2. **Travail Rigoureux :**  
+   - Utilisation d'outils de pointe pour structurer un workflow efficace entre les agents.  
+
+3. **Engagement Personnel :**  
+   - Inclusion d'un Easter egg musical pour partager un moment de joie et de festivité.  
 
 ---
 
-#### **Structure du Projet**
-- **`src/`**
-  - **`app.controller.ts`** : Point d'entrée principal pour gérer les requêtes utilisateur via `/invoke`.
-  - **`app.service.ts`** : Logique de traitement des requêtes utilisateur.
-  - **`agents/`**
-    - **`cartManager.agent.ts`** : Gère les actions liées au panier (ajout, suppression, affichage).
-    - **`tavily.agent.ts`** : Réalise des recherches en ligne pour enrichir les produits du panier.
-    - **`supervisor.agent.ts`** : Coordonne les appels entre agents et retourne une réponse à l'utilisateur.
-  - **`cart.json`** : Stockage des données du panier (produits ajoutés).
-
----
-
-#### **Approche de Développement**
-1. **Analyse des exigences :**
-   - Identifier les responsabilités de chaque agent.
-   - Structurer l'application pour permettre la collaboration entre les agents via Langgraph.
-
-2. **Mise en place des agents :**
-   - Création de l'agent de gestion de panier (Cart Manager).
-   - Implémentation de l'agent Tavily pour les recherches.
-   - Développement de l'agent Coordinateur pour orchestrer les actions.
-
-3. **Orchestration via Langgraph :**
-   - Utilisation de Langgraph pour structurer le workflow entre les agents.
-   - Configuration de la limite de récursion et gestion des résumés d'actions.
-
-4. **Endpoint unique :**
-   - Implémentation d'une route unique (`/invoke`) pour traiter toutes les requêtes utilisateur.
-
-5. **Test et Validation :**
-   - Validation des cas d'utilisation tels que l'ajout, la suppression et l'affichage des produits.
-   - Vérification de l'interaction entre agents et du flux des données.
-
----
-
-#### **Exemples de Scénarios Testés**
-
-1. **Ajout de produit :**
-   - Requête : `Ajoute un sapin de Noël à mon panier`
-   - Réponse : `Le produit "Sapin de Noël" a été ajouté au panier.`
-
-2. **Affichage du panier :**
-   - Requête : `Affiche mon panier`
-   - Réponse :
-     ```
-     Votre panier contient :
-     - Sapin de Noël - [Lien](https://www.ikea.com)
-     ```
-
-3. **Recherche et ajout :**
-   - Requête : `Recherche un sapin chez Ikea et ajoute-le au panier.`
-   - Réponse : `Le produit "Sapin IKEA" a été trouvé et ajouté à votre panier.`
-
----
-
-#### **Améliorations Possibles**
-- Intégration de tests unitaires pour valider les fonctionnalités critiques.
-- Support d'un stockage plus robuste (par exemple, une base de données relationnelle comme PostgreSQL).
-- Ajout d'une interface utilisateur pour simplifier les interactions avec l'API.
-- Gestion avancée des erreurs pour des cas spécifiques.
-
-
-
-
-
-
-
-
+🎄 **Joyeux Noël et Bonne Année !**  
+Avec tout mon respect et mon enthousiasme,  
+**Sergueï Gorbounov**

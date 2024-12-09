@@ -72,7 +72,7 @@ Le choix de **NestJS** comme framework backend était stratégique pour ses avan
 - Exemple TypeScript :
   ```typescript
   const workflow = new StateGraph(AgentState)
-    .addNode("researcher", researcherNode)
+    .addNode("researcher", tavilyNode)
     .addNode("cart_manager", cartManagerNode)
     .addNode("supervisor", supervisorChain)
     .addEdge(START, "supervisor")
@@ -173,6 +173,7 @@ Votre panier contient :
    - Créez un fichier `.env` :
      ```env
      OPENAI_API_KEY=your_openai_api_key
+     TAVELY_API_KEY=your_tavely_api_key
      ```
 
 4. **Lancer l'application** :

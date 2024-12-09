@@ -146,7 +146,6 @@ Votre panier contient :
 ### **Dossier Public : `public/`**
 - Contient l’interface utilisateur avec animations.
 
-### **Dossier Data : `data/`**
 - **`cart.json`** : Stockage des produits ajoutés au panier.
 
 ---

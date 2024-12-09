@@ -6,7 +6,7 @@
 
 Ce projet illustre la conception d'une application backend avec **NestJS** et la librairie innovante **LangGraph**. Il s'agit de créer une architecture multi-agent orchestrée autour d'une gestion de panier d'achat enrichie par des recherches intelligentes en ligne.  
 
-L'objectif est de mettre en avant des compétences techniques solides tout en proposant une expérience utilisateur immersive et conviviale, agrémentée d'une interface graphique dynamique et d'un Easter egg musical pour rendre l'exploration plus agréable.  
+L'objectif est de mettre en avant des compétences techniques solides tout en proposant une expérience utilisateur immersive et conviviale, agrémentée d'une interface graphique dynamique et d'un Easter egg pour rendre l'exploration plus agréable.  
 
 Accédez à l'application déployée ici :  
 [**Graph Multi-Agent - Déploiement Vercel**](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app)

@@ -9,42 +9,45 @@ Aucune installation nécessaire, testez directement l'application en ligne ! �
 
 ## **Résumé du Projet**
 
-Ce projet illustre la conception et la mise en œuvre d'une application backend avancée, exploitant **NestJS** et la librairie **LangGraph** pour créer un système orchestré basé sur des agents communicants. 
+Ce projet met en avant l'intégration d'outils avancés comme **LangGraph**, **LangChain**, et **NestJS** pour construire une architecture backend orchestrée par des agents communicants. Il démontre une expertise dans la création de workflows sophistiqués tout en intégrant des pratiques modernes de développement en TypeScript.
 
-L'objectif était de démontrer une maîtrise technique approfondie et de mettre en œuvre des pratiques modernes d'ingénierie logicielle, en particulier dans le domaine des systèmes multi-agents et de l'intelligence artificielle. L'application propose une interface engageante et festive, intégrant des éléments interactifs tels qu'un Easter egg musical et une ambiance graphique joyeuse.
+Le système est centré sur la gestion d'un panier d'achat enrichi par des recherches intelligentes et utilise une orchestration multi-agent avancée. L'application, déployée sur **Vercel**, propose également une interface engageante avec des fonctionnalités interactives comme un Easter egg musical.
 
-L'application est déployée avec succès sur **Vercel** et prête à être explorée ici :  
 👉 **[Graph Multi-Agent sur Vercel](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app)** 👈
 
 ---
 
 ## **Objectifs Techniques et Approche**
 
+### **Intégration avec NestJS et TypeScript**
+
+Le choix de **NestJS** comme framework backend était stratégique pour ses avantages suivants :
+- **Modularité** : Simplifie l'intégration de services complexes, comme les agents définis dans **LangGraph**.
+- **Support TypeScript** : Permet une typage strict, réduisant les erreurs et augmentant la maintenabilité.
+- **Injecteurs de dépendances** : Utilisés pour brancher les agents et outils nécessaires dans les modules correspondants.
+
 ### **Principales Innovations**
 
 #### **1. Conception Graphique avec LangGraph**
-- Création d’un **graphe multi-agents** orchestré avec des outils et workflows modernes.
-- Gestion centralisée des états via des annotations LangGraph pour simplifier la collaboration entre agents.
+- Mise en place d'une orchestration des agents à l'aide d'un graphe défini via **LangGraph**.
+- Gestion centralisée des états avec des annotations spécifiques, facilitant la communication entre agents.
 
 #### **2. Utilisation de Technologies Avancées**
-- **API intégrées** :
-  - **LangChain** pour la gestion des prompts et outils avancés.
-  - **Tavily** pour les recherches en ligne.
-  - **OpenAI** pour les capacités LLM et le traitement de texte.
-- **LangSmith Studio** : Outil utilisé pour visualiser les interactions entre agents et optimiser les flux.
+- **LangChain** pour orchestrer les prompts et interactions complexes.
+- **Tavily** pour les recherches dynamiques sur Internet.
+- **OpenAI API** pour les réponses basées sur des modèles LLM.
 
-#### **3. Pratiques d'Excellence**
-- **Modularité et maintenabilité** :
-  - Chaque agent et outil est isolé pour faciliter l'extensibilité.
-- **Approche ReAct** : Coordination intelligente des agents pour réduire la complexité des interactions.
+#### **3. Intégration Avancée des Modules**
+- Les agents sont conçus en tant que **services NestJS**, intégrés dans des modules distincts pour une séparation des responsabilités.
+- Les workflows sont orchestrés au sein d'un module dédié, qui utilise les agents comme dépendances.
 
 ---
 
-### **Étapes de Développement**
+## **Étapes de Développement**
 
-#### **1. Définir l’État**
-- Structure partagée pour enregistrer les messages et actions des agents.
-- Exemple en TypeScript :
+### **1. Définir l’État**
+- Une structure partagée est utilisée pour gérer les messages et états des agents. Cela est réalisé grâce à LangGraph et des annotations spécifiques.
+- Exemple TypeScript :
   ```typescript
   const AgentState = Annotation.Root({
     messages: Annotation<BaseMessage[]>({
@@ -58,24 +61,27 @@ L'application est déployée avec succès sur **Vercel** et prête à être expl
   });
   ```
 
-#### **2. Création des Outils**
-- **Agent Tavily** : Recherche sur Internet et partage des résultats.
-- **Cart Manager** : Gestion des produits (ajout, suppression, affichage) via un fichier JSON.
-- **Outils Dynamiques** : Génération de graphiques interactifs avec **D3.js**.
+### **2. Création des Agents avec NestJS**
+- **Agent Tavily** : Implémenté comme un service NestJS qui intègre l'API Tavily pour effectuer des recherches.
+- **Cart Manager** : Gestion des produits via des services utilisant des fichiers JSON comme base de données temporaire.
+- **Agent Supervisor** : Orchestration des tâches entre les agents.
 
-#### **3. Orchestration avec l'Agent Supervisor**
-- Un **Agent Supervisor** gère la délégation des tâches et les interactions entre agents.
-- Exemple d'orchestration :
-  ```typescript
-  const supervisorChain = formattedPrompt
-    .pipe(llm.bindTools([routingTool], { tool_choice: "route" }))
-    .pipe(new JsonOutputToolsParser())
-    .pipe((x) => (x[0].args));
-  ```
+Exemple d'un agent en TypeScript dans un module NestJS :
+```typescript
+@Injectable()
+export class TavilyAgent {
+  constructor(private readonly httpService: HttpService) {}
 
-#### **4. Construction du Graphe**
-- Création de nœuds pour chaque agent et définition des connexions.
-- Exemple de graphe :
+  async searchProduct(query: string): Promise<any> {
+    const response = await this.httpService.get(`https://api.tavily.com/search`, { params: { query } }).toPromise();
+    return response.data;
+  }
+}
+```
+
+### **3. Construction du Graphe**
+- Un graphe d'exécution des agents est défini via **LangGraph**, reliant les différents agents en fonction de leurs responsabilités.
+- Exemple TypeScript :
   ```typescript
   const workflow = new StateGraph(AgentState)
     .addNode("researcher", researcherNode)
@@ -85,24 +91,24 @@ L'application est déployée avec succès sur **Vercel** et prête à être expl
     .addConditionalEdges("supervisor", (x) => x.next);
   ```
 
-#### **5. Visualisation et Débogage avec LangSmith**
-- Configuration pour observer les communications entre agents et ajuster les workflows.
+### **4. Orchestration des Flux avec LangSmith**
+- Les interactions entre les agents sont supervisées et ajustées via LangSmith Studio.
 
 ---
 
 ## **Fonctionnalités Techniques**
 
 1. **Endpoint Unique : `/invoke?query={user_query}`**
-   - Simplifie l’interaction utilisateur en regroupant toutes les fonctionnalités via une seule route.
+   - Fournit une interface utilisateur simple via une seule route API.
 
-2. **Collaboration Multi-Agent** :
-   - Coordination dynamique pour répondre précisément aux requêtes utilisateurs.
+2. **Orchestration Multi-Agent** :
+   - Les agents collaborent pour exécuter des tâches basées sur les requêtes des utilisateurs.
 
-3. **Logs Visuels en Temps Réel** :
-   - Interface HTML/CSS affichant les actions en direct avec des animations.
+3. **Gestion d’État Partagée** :
+   - Les messages et états des agents sont centralisés dans une structure commune.
 
-4. **Easter Egg et Ambiance Festive** :
-   - Intégration d’une playlist musicale et d’un thème graphique de Noël.
+4. **Logs et Visualisation** :
+   - Les actions sont affichées en temps réel via une interface HTML/CSS.
 
 ---
 
@@ -117,8 +123,6 @@ GET /invoke?query=Ajoute un sapin de Noël à mon panier
 Le produit "Sapin de Noël" a été ajouté à votre panier.
 ```
 
----
-
 ### **Rechercher un Produit et l’Ajouter :**
 ```bash
 GET /invoke?query=Recherche un sapin de Noël chez Ikea et ajoute-le au panier
@@ -127,8 +131,6 @@ GET /invoke?query=Recherche un sapin de Noël chez Ikea et ajoute-le au panier
 ```
 Le produit "Sapin IKEA" a été trouvé et ajouté à votre panier.
 ```
-
----
 
 ### **Afficher le Panier :**
 ```bash
@@ -146,15 +148,15 @@ Votre panier contient :
 
 ### **Répertoire Principal : `src/`**
 - **`agents/`** : Contient les agents principaux.
-  - `cartManager.agent.ts` : Gère les actions liées au panier.
-  - `tavily.agent.ts` : Recherche des informations via API Tavily.
-  - `supervisor.agent.ts` : Coordonne les interactions.
-- **`tools/`** : Outils personnalisés pour les agents.
+  - `cartManager.agent.ts` : Gestion des produits du panier.
+  - `tavily.agent.ts` : Recherche de produits via API Tavily.
+  - `supervisor.agent.ts` : Coordination entre agents.
+- **`modules/`** : Modules NestJS organisés pour chaque fonctionnalité.
 - **`state/`** : Gestion centralisée des états.
-- **`workflow/`** : Orchestration des graphes.
+- **`workflow/`** : Définition du graphe LangGraph.
 
 ### **Dossier Public : `public/`**
-- Contient l’interface utilisateur avec animations et musique.
+- Contient l’interface utilisateur avec animations.
 
 ### **Dossier Data : `data/`**
 - **`cart.json`** : Stockage des produits ajoutés au panier.
@@ -191,23 +193,20 @@ Votre panier contient :
    npm run start
    ```
 
-5. **Ou visitez l'application en ligne :**  
+5. **Ou visitez directement :**  
    👉 **[Graph Multi-Agent sur Vercel](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app)** 👈
 
 ---
 
 ## **Améliorations Futures**
 
-1. **Stockage Persistant** :
-   - Migration vers une base de données comme PostgreSQL.
+1. **Base de Données Robuste** :
+   - Passage de JSON à PostgreSQL pour une gestion persistante.
 
-2. **Tests Unitaires** :
-   - Ajout de tests pour garantir la fiabilité des fonctionnalités.
+2. **Interface Utilisateur Complète** :
+   - Création d'un frontend graphique réactif.
 
-3. **Interface Utilisateur Complète** :
-   - Ajout d’un frontend intégral pour une meilleure expérience utilisateur.
-
-4. **Optimisation des Performances** :
+3. **Optimisation des Performances** :
    - Réduction des temps de réponse dans les workflows.
 
 ---

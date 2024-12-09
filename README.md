@@ -99,10 +99,10 @@ Avant de lancer le projet, assurez-vous d'avoir installé les outils suivants :
   - **`app.controller.ts`** : Point d'entrée principal pour gérer les requêtes utilisateur via `/invoke`.
   - **`app.service.ts`** : Logique de traitement des requêtes utilisateur.
   - **`agents/`**
-    - **`cart-manager.agent.ts`** : Gère les actions liées au panier (ajout, suppression, affichage).
+    - **`cartManager.agent.ts`** : Gère les actions liées au panier (ajout, suppression, affichage).
     - **`tavily.agent.ts`** : Réalise des recherches en ligne pour enrichir les produits du panier.
-    - **`coordinator.agent.ts`** : Coordonne les appels entre agents et retourne une réponse à l'utilisateur.
-  - **`storage/cart.json`** : Stockage des données du panier (produits ajoutés).
+    - **`supervisor.agent.ts`** : Coordonne les appels entre agents et retourne une réponse à l'utilisateur.
+  - **`cart.json`** : Stockage des données du panier (produits ajoutés).
 
 ---
 

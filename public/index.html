@@ -55,7 +55,7 @@
           justify-content: center;
           align-items: center;
           overflow: hidden;
-          background-color: black; /* Secondary background layer */
+          background-color: black;
           position: relative;
       }
 
@@ -71,7 +71,7 @@
                   url('perenoel.webp') no-repeat center center fixed;
           background-size: cover;
           animation: brightness 8s infinite alternate ease-in-out, blurBreathe 10s infinite alternate ease-in-out;
-          z-index: -1; /* Behind everything */
+          z-index: -1;
       }
 
       /* Glowing Link Styles */
@@ -107,8 +107,6 @@
 
       }
 
-
-      /* Container */
       .container {
           display: flex;
           flex-direction: column;
@@ -117,14 +115,13 @@
           width: 90%;
           height: 90%;
           animation: breathe 10s infinite ease-in-out;
-          gap: 20px; /* Space between elements */
+          gap: 20px;
           margin-bottom: 50px;
       }
 
-      /* Input and Buttons */
       .form {
           display: flex;
-          gap: 10px; /* Space between input and buttons */
+          gap: 10px;
           justify-content: center;
           align-items: center;
           width: 100%;
@@ -162,7 +159,6 @@
           cursor: pointer;
       }
 
-      /* Logs */
       .logs {
           width: 80%;
           height: 50%;
@@ -199,7 +195,6 @@
           color: white;
       }
 
-      /* Spotify */
       .spotify-layer {
           width: 80%;
           max-width: 700px;
@@ -259,24 +254,6 @@
     }
   };
 
-  setInterval(async () => {
-    try {
-      const response = await fetch('/logs');
-      const text = await response.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text, 'text/html');
-      const logs = doc.querySelector('pre') ? doc.querySelector('pre').textContent : '';
-
-      logs.split('\n').forEach((logLine) => {
-        if (logLine && !logLine.startsWith("Query processed successfully")) {
-          appendLog(logLine.trim());
-        }
-      });
-    } catch (error) {
-      console.error('Error fetching logs:', error);
-    }
-  }, 3000);
-
   submitButton.addEventListener("click", async () => {
     const query = queryInput.value.trim();
     if (!query) {
@@ -288,11 +265,24 @@
 
     try {
       const response = await fetch(`/invoke?query=${encodeURIComponent(query)}`);
-      const result = await response.text();
+      const result = await response.json();
 
-      if (!result.startsWith("Query processed successfully")) {
-        appendLog(result, false);
+      let lastContent = "No content found.";
+      if (result?.processingDetails) {
+        for (const detail of result.processingDetails) {
+          const state = detail?.supervisorState;
+          if (state) {
+            for (const key in state) {
+              const messages = state[key]?.messages;
+              if (messages && messages.length > 0) {
+                lastContent = messages[messages.length - 1]?.kwargs?.content || lastContent;
+              }
+            }
+          }
+        }
       }
+
+      appendLog(`Chef: ${lastContent}`, false);
     } catch (error) {
       appendLog(`Error: ${error.message}`, false);
     }

@@ -38,9 +38,6 @@ Le choix de **NestJS** comme framework backend était stratégique pour ses avan
 - **Tavily** pour les recherches dynamiques sur Internet.
 - **OpenAI API** pour les réponses basées sur des modèles LLM.
 
-#### **3. Intégration des nodes**
-- Les agents sont conçus comme des nœuds(nodes), intégrés dans un graphe(graph) distinct pour une communication efficace via des arêtes(edges).
-
 ---
 
 ## **Étapes de Développement**

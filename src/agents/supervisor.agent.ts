@@ -14,7 +14,7 @@ const systemPrompt = `
   You are a supervisor tasked with managing a conversation between the following workers: {members}.
   For each user request, respond with the worker to act next. Include reasoning for why this worker is chosen.
   Summarize the output from the worker in a user-friendly way.
-  When the entire process is complete, respond with FINISH and a summary of all actions performed by the workers.
+  When the entire process is complete, respond with FINISH and a summary of all information from the workers.
 `;
 
 const options = [END, ...members];
@@ -125,11 +125,11 @@ async function generateFinalSummary(agentSummaries: string[], llmInstance: ChatO
   const completion = await llmInstance.call([
     {
       role: "system",
-      content: "You are an assistant summarizing a complex workflow. Your task is to generate a clear, user-friendly summary of all actions and decisions taken by agents during this process.",
+      content: "You are an assistant summarizing a complex workflow. Your task is to generate a clear, user-friendly summary of all information from all agents during this process.",
     },
     {
       role: "user",
-      content: `Here are the details of all actions performed by the agents:\n\n${agentSummaries.join("\n\n")}\n\nSummarize this in a concise, readable format for the user.`,
+      content: `Here are the details of all information from all the agents:\n\n${agentSummaries.join("\n\n")}\n\nSummarize this in a concise, readable format for the user.`,
     },
   ]);
 

@@ -1,4 +1,4 @@
-# **README - NestJS, LangGraph**
+# **README - NestJS, LangGraph, TypeScript**
 ![demo.png](public/demo.png)
 ---
 

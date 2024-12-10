@@ -5,9 +5,9 @@ import { START, StateGraph } from "@langchain/langgraph";
 import { tavilyNode } from "../agents/tavily.agent.js";
 import { cartManagerNode } from "../agents/cartManager.agent.js";
 
-// 1. Create the graph
+ // 1. Create the graph
 const workflow = new StateGraph(AgentState)
-  // 2. Add the nodes; these will do the work
+  // 2. Add the nodes
   .addNode("researcher", tavilyNode)
   .addNode("cart_manager", cartManagerNode)
   .addNode("supervisor", async (state, config) => {
@@ -23,7 +23,7 @@ const workflow = new StateGraph(AgentState)
 
     return result;
   });
-// 3. Define the edges. We will define both regular and conditional ones
+// 3. Define the edges. Regular and conditional ones
 // After a worker completes, report to supervisor
 members.forEach((member) => {
   workflow.addEdge(member, "supervisor");

@@ -5,8 +5,7 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import express from 'express';
-
-// Define the Express server instance
+// Hybrid solution
 const server = express();
 
 async function bootstrap() {
@@ -18,7 +17,7 @@ async function bootstrap() {
 
   app.enableCors(); // Enable CORS for frontend-backend communication
 
-  // Add this line to start listening on port 3000 locally
+  // To start listening on port 3001 locally
   await app.listen(3001, () => {
     console.log('Application running on http://localhost:3001');
   });

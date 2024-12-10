@@ -143,7 +143,7 @@ Votre panier contient :
 - Contient l’interface utilisateur avec animations.
 
 - **`cart.json`** : Stockage des produits ajoutés au panier.
-
+En cas de problème avec **cart.json**, un stockage temporaire via **Redis** est prévu pour assurer la continuité.
 ---
 
 ## **Installation**

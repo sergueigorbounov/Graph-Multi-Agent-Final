@@ -33,7 +33,7 @@ Le choix de **NestJS** comme framework backend était stratégique pour ses avan
 - Gestion centralisée des états avec des annotations spécifiques, facilitant la communication entre agents.
 
 #### **2. Utilisation de Technologies**
-- **NestJS** - pour un backend efficace, modulaire, maintenable et moderne. 
+- **NestJS** pour un backend efficace, modulaire, maintenable et moderne. 
 - **LangGraph** pour orchestrer les prompts et interactions complexes.
 - **Tavily** pour les recherches dynamiques sur Internet.
 - **OpenAI API** pour les réponses basées sur des modèles LLM.

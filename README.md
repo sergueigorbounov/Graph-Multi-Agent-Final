@@ -24,7 +24,7 @@ Le système est centré sur la gestion d'un panier d'achat enrichi par des reche
 Le choix de **NestJS** comme framework backend était stratégique pour ses avantages suivants :
 - **Modularité** : Simplifie l'intégration de services complexes, comme les agents définis dans **LangGraph**.
 - **Support TypeScript** : Permet une typage strict, réduisant les erreurs et augmentant la maintenabilité.
-- **Injecteurs de dépendances** : Utilisés pour brancher les agents et outils nécessaires dans les modules correspondants.
+- **Injecteurs de dépendances** : Utilisés pour brancher outils nécessaires dans les modules correspondants.
 
 ### **Principales Innovations**
 

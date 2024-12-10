@@ -1,5 +1,5 @@
 # **README Étendu - Test Technique Développeur Fullstack**
-
+![demo.png](public/demo.png)
 ---
 
 ### **🚀 [Application Déployée sur Vercel](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app)**  

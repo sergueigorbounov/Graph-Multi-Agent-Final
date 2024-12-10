@@ -142,7 +142,7 @@ Votre panier contient :
 ### **Dossier Public : `public/`**
 - Contient l’interface utilisateur avec animations.
   
-### **Root
+### **Root**
 - **`cart.json`** : Stockage des produits ajoutés au panier.
 En cas de problème avec **cart.json**, un stockage temporaire via **Redis** est prévu pour assurer la continuité.
 ---

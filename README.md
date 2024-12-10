@@ -1,4 +1,4 @@
-# **README Étendu - Test Technique Développeur Fullstack**
+# **README Étendu - NestJS, LangGraph**
 ![demo.png](public/demo.png)
 ---
 
@@ -173,7 +173,7 @@ Votre panier contient :
    - Créez un fichier `.env` :
      ```env
      OPENAI_API_KEY=your_openai_api_key
-     TAVELY_API_KEY=your_tavely_api_key
+     TAVILY_API_KEY=your_tavily_api_key
      ```
 
 4. **Lancer l'application** :

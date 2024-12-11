@@ -11,7 +11,7 @@ Aucune installation nécessaire, testez directement l'application en ligne ! �
 
 Ce projet met en avant l'intégration d'outils comme **LangGraph**, **LangChain**, **LangSmith** et **NestJS** pour construire une architecture backend orchestrée par des agents communicants. Il démontre une expertise dans la création de workflows sophistiqués tout en intégrant des pratiques modernes de développement en **TypeScript**.
 
-Le système est centré sur la gestion d'un panier d'achat enrichi par des recherches intelligentes et utilise une orchestration multi-agent avancée. L'application, déployée sur **Vercel**, propose également une interface engageante avec des fonctionnalités interactives comme un "Easter egg" **Vue.js**.
+Le système est centré sur la gestion d'un panier d'achat enrichi par des recherches intelligentes et utilise une orchestration multi-agent avancée. L'application, déployée sur **Render**, propose également une interface engageante avec des fonctionnalités interactives comme un "Easter egg" **Vue.js**.
 
 👉 **[Graph Multi-Agent](https://graph-multi-agent-2.onrender.com)** 👈
 

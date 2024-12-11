@@ -13,7 +13,7 @@ Ce projet met en avant l'intégration d'outils comme **LangGraph**, **LangChain*
 
 Le système est centré sur la gestion d'un panier d'achat enrichi par des recherches intelligentes et utilise une orchestration multi-agent avancée. L'application, déployée sur **Vercel**, propose également une interface engageante avec des fonctionnalités interactives comme un "Easter egg" **Vue.js**.
 
-👉 **[Graph Multi-Agent](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app)** 👈
+👉 **[Graph Multi-Agent](https://graph-multi-agent-2.onrender.com)** 👈
 
 ---
 
@@ -182,7 +182,7 @@ En cas de problème avec **cart.json**, un stockage temporaire via **Redis** est
    ```
 
 5. **Ou visitez directement :**  
-   👉 **[Graph Multi-Agent](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app)** 👈
+   👉 **[Graph Multi-Agent](https://graph-multi-agent-2.onrender.com)** 👈
 
 ---
 
@@ -201,4 +201,4 @@ En cas de problème avec **cart.json**, un stockage temporaire via **Redis** est
 
 🎄 **Joyeux Noël et Bonne Année !**  
 **Sergueï Gorbounov**.  
-[**Lien GitHub**](https://github.com/sergueigorbounov/Graph-Multi-Agent-Final) | [**Lien Déployé**](https://graph-iaf4xjib0-sergueis-projects-5c54ca99.vercel.app) 🎅
+[**Lien GitHub**](https://github.com/sergueigorbounov/Graph-Multi-Agent-Final) | [**Lien Déployé**](https://graph-multi-agent-2.onrender.com) 🎅

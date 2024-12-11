@@ -6,8 +6,6 @@
 Aucune installation nécessaire, testez directement l'application en ligne ! 🎄
 
 ---
-
-[![Spotify](https://spotify-github-readme.vercel.app/api/spotify)](https://open.spotify.com/collection/tracks)
 ## **Résumé du Projet**
 
 Ce projet met en avant l'intégration d'outils comme **LangGraph**, **LangChain**, **LangSmith** et **NestJS** pour construire une architecture backend orchestrée par des agents communicants. Il démontre une expertise dans la création de workflows sophistiqués tout en intégrant des pratiques modernes de développement en **TypeScript**.

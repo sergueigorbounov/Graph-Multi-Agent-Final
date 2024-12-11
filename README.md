@@ -6,9 +6,6 @@
 Aucune installation nécessaire, testez directement l'application en ligne ! 🎄
 
 ---
-Default theme
-spotify-github-profile
-
 
 [![Spotify](https://spotify-github-readme.vercel.app/api/spotify)](https://open.spotify.com/collection/tracks)
 ## **Résumé du Projet**

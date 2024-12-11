@@ -2,7 +2,7 @@
 ![demo.png](public/demo.png)
 ---
 
-### **🚀 [Application Déployée sur Vercel](https://graph-multi-agent-2.onrender.com)**  
+### **🚀 [Application Déployée](https://graph-multi-agent-2.onrender.com)**  
 Aucune installation nécessaire, testez directement l'application en ligne ! 🎄
 
 ---
